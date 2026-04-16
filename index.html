@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OUIIL HOME - لوح تقطيع ستانلس ستيل للمطبخ بوجهين للاستخدام، مضاد للانزلاق مع حافة تثبيت للرخامة">
+    <meta name="keywords" content="لوح تقطيع, ستانلس ستيل, مطبخ, تقطيع لحوم, تقطيع خضروات">
+    <title>OUIIL HOME – اويل هوم | لوح تقطيع ستانلس ستيل</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="OUIIL HOME" onerror="this.style.display='none'">
+                <span class="logo-text">OUIIL <span>HOME</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-links">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">اتصل بنا</a>
+                <a href="#features">المميزات</a>
+                <a href="#policies">السياسات</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="checkout.html" class="btn btn-primary header-cta">
+                    <i class="fas fa-shopping-cart"></i>
+                    اطلب الآن
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">اتصل بنا</a>
+        <a href="#features">المميزات</a>
+        <a href="#policies">السياسات</a>
+        <a href="sales-policy.html">سياسة البيع</a>
+        <a href="return-policy.html">سياسة الإرجاع</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="warranty.html">سياسة الضمان</a>
+        <a href="checkout.html" class="btn btn-primary btn-block" style="margin-top:16px;">
+            <i class="fas fa-shopping-cart"></i>
+            اطلب الآن
+        </a>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Product Gallery -->
+                <div class="hero-gallery">
+                    <div class="main-image">
+                        <span class="gallery-badge">الأكثر مبيعاً</span>
+                        <img src="images/product-1.png" alt="لوح تقطيع ستانلس ستيل" id="mainProductImage">
+                    </div>
+                    <div class="thumb-list">
+                        <div class="thumb-item active" onclick="changeImage('images/product-1.png', this)">
+                            <img src="images/product-1.png" alt="صورة 1">
+                        </div>
+                        <div class="thumb-item" onclick="changeImage('images/product-2.png', this)">
+                            <img src="images/product-2.jpg" alt="صورة 2">
+                        </div>
+                        <div class="thumb-item" onclick="changeImage('images/product-3.png', this)">
+                            <img src="images/product-3.jpg" alt="صورة 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="hero-info">
+                    <p class="product-category">
+                        <i class="fas fa-utensils"></i>
+                        أدوات مطبخ احترافية
+                    </p>
+                    <h1>لوح تقطيع ستانلس ستيل للمطبخ</h1>
+                    <p class="product-brief">
+                        30×40 سم – وجهين للاستخدام، مضاد للانزلاق مع حافة تثبيت للرخامة – مناسب للحوم والخضروات والفاكهة والخبز والعجين
+                    </p>
+
+                    <!-- Price -->
+                    <div class="price-box">
+                        <span class="current-price" id="productPrice">620 ج.م</span>
+                        <span class="old-price" id="oldPrice" style="display:none;"></span>
+                        <span class="price-badge" id="priceBadge" style="display:none;"></span>
+                    </div>
+
+                    <!-- Quick Features -->
+                    <ul class="hero-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            ستانلس ستيل 304 غير مسامي ومضاد للبكتيريا
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            وجهين للاستخدام – لحوم وخضروات
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            حافة تثبيت L-Shape للرخامة
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            حصيرة سيليكون مضادة للانزلاق
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            مقاس 30×40 سم – مناسب لكل المطابخ
+                        </li>
+                    </ul>
+
+                    <!-- Buttons -->
+                    <div class="hero-buttons">
+                        <a href="checkout.html" class="btn btn-accent btn-lg">
+                            <i class="fas fa-shopping-bag"></i>
+                            اطلب الآن
+                        </a>
+                        <a href="https://wa.me/201050986433?text=مرحبا، أرغب في الاستفسار عن لوح التقطيع" 
+                           target="_blank" class="btn btn-whatsapp btn-lg">
+                            <i class="fab fa-whatsapp"></i>
+                            تواصل واتساب
+                        </a>
+                    </div>
+
+                    <!-- Guarantee Badges -->
+                    <div class="hero-guarantee">
+                        <div class="hero-guarantee-item">
+                            <i class="fas fa-truck-fast"></i>
+                            <span>شحن سريع</span>
+                        </div>
+                        <div class="hero-guarantee-item">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>ضمان سنة</span>
+                        </div>
+                        <div class="hero-guarantee-item">
+                            <i class="fas fa-rotate-left"></i>
+                            <span>إرجاع 14 يوم</span>
+                        </div>
+                        <div class="hero-guarantee-item">
+                            <i class="fas fa-lock"></i>
+                            <span>دفع آمن</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUST BADGES ========== -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h4>توصيل سريع</h4>
+                    <p>القاهرة والجيزة خلال 24-48 ساعة</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <i class="fas fa-rotate-left"></i>
+                    </div>
+                    <h4>إرجاع مجاني</h4>
+                    <p>ضمان إرجاع خلال 14 يوم</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h4>ضمان سنة كاملة</h4>
+                    <p>ضد عيوب التصنيع</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>دعم فوري</h4>
+                    <p>واتساب وبريد إلكتروني</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-badge">لماذا هذا المنتج؟</span>
+                <h2>مميزات لوح التقطيع الاستانلس</h2>
+                <p>استثمار حقيقي لصحة عائلتك وراحتك في المطبخ</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h4>استثمار لصحة عائلتك</h4>
+                    <p>على عكس الألواح الخشبية والبلاستيكية التي تمتص السوائل وتتحول لبيئة للبكتيريا، يوفر ستانلس ستيل 304 سطحاً غير مسامي وسهل التنظيف ولا يحتفظ بالروائح.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-hand"></i>
+                    </div>
+                    <h4>ثبات قوي أثناء التقطيع</h4>
+                    <p>تصميم L-Shape مع حافة تثبيت للرخامة وحصيرة سيليكون إضافية يمنح ثباتاً ممتازاً أثناء الاستخدام ويقلل الانزلاق.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h4>آمن على السكاكين واليدين</h4>
+                    <p>السطح مصمم بنعومة مدروسة للمساعدة في الحفاظ على حدة السكاكين، مع زوايا مدورة لسهولة الحمل والتنظيف بأمان.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h4>مناسب للمخبوزات والعجين</h4>
+                    <p>برودة المعدن الطبيعية تساعد في فرد العجين ومنع الالتصاق والحفاظ على قوام الزبدة أثناء التحضير.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <h4>تنظيف سريع وتخزين سهل</h4>
+                    <p>يمكن تنظيفه بسهولة خلال ثوانٍ، كما أن تصميمه النحيف يسهّل تخزينه أو تعليقه داخل المطبخ.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>جودة عالية ومتانة</h4>
+                    <p>مصنوع من ستانلس ستيل 304 الفاخر المقاوم للصدأ والتآكل مع ضمان سنة كاملة ضد عيوب التصنيع.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SPECIFICATIONS SECTION ========== -->
+    <section class="specs-section" id="specs">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-badge">التفاصيل الفنية</span>
+                <h2>المواصفات الكاملة</h2>
+                <p>تعرف على كل تفاصيل المنتج قبل الشراء</p>
+            </div>
+            <div class="specs-grid">
+                <div class="specs-image">
+                    <img src="images/product-2.png" alt="مواصفات لوح التقطيع">
+                </div>
+                <div class="specs-table">
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-ruler-combined"></i>
+                            المقاس
+                        </span>
+                        <span class="spec-value">30 × 40 سم</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-layer-group"></i>
+                            الخامة
+                        </span>
+                        <span class="spec-value">ستانلس ستيل 304</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-arrows-rotate"></i>
+                            الاستخدام
+                        </span>
+                        <span class="spec-value">وجهين – لحوم وخضروات</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-grip"></i>
+                            مانع الانزلاق
+                        </span>
+                        <span class="spec-value">حصيرة سيليكون مرفقة</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-expand"></i>
+                            التثبيت
+                        </span>
+                        <span class="spec-value">حافة L-Shape للرخامة</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-droplet-slash"></i>
+                            مقاوم للماء
+                        </span>
+                        <span class="spec-value">نعم – غير مسامي</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-bacterium"></i>
+                            مضاد للبكتيريا
+                        </span>
+                        <span class="spec-value">نعم – سطح غير مسامي</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-shield-halved"></i>
+                            الضمان
+                        </span>
+                        <span class="spec-value">سنة كاملة ضد عيوب التصنيع</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <i class="fas fa-utensils"></i>
+                            الاستخدامات
+                        </span>
+                        <span class="spec-value">لحوم، خضروات، فاكهة، خبز، عجين</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS SECTION ========== -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-badge">لماذا تختارنا؟</span>
+                <h2>ليه تشتري من OUIIL HOME؟</h2>
+                <p>نضمنلك تجربة شراء مميزة وآمنة</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-num">1</div>
+                    <div class="benefit-content">
+                        <h4>منتج أصلي وجودة مضمونة</h4>
+                        <p>نوفر منتجات عالية الجودة مصنوعة من أفضل الخامات مع ضمان سنة كاملة.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-num">2</div>
+                    <div class="benefit-content">
+                        <h4>شحن سريع لكل المحافظات</h4>
+                        <p>القاهرة والجيزة خلال 24-48 ساعة، باقي المحافظات من 3 لـ 5 أيام عمل.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-num">3</div>
+                    <div class="benefit-content">
+                        <h4>إرجاع واستبدال سهل</h4>
+                        <p>يحق ليك ترجع المنتج خلال 14 يوم لو مش راضي عنه بالكامل.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-num">4</div>
+                    <div class="benefit-content">
+                        <h4>دعم فني متواصل</h4>
+                        <p>فريق خدمة العملاء متاح 7 أيام في الأسبوع عبر الواتساب والبريد الإلكتروني.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-num">5</div>
+                    <div class="benefit-content">
+                        <h4>الدفع عند الاستلام</h4>
+                        <p>مش لازم تدفع أونلاين – ادفع لما المنتج يوصلك في إيدك.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-num">6</div>
+                    <div class="benefit-content">
+                        <h4>تغليف آمن ومميز</h4>
+                        <p>المنتجات معبأة بعناية لضمان وصولها سليمة بدون أي خدوش أو تلف.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== POLICIES PREVIEW ========== -->
+    <section class="policies-section" id="policies">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-badge">سياساتنا</span>
+                <h2>نضمنلك حقوقك الكاملة</h2>
+                <p>اطلع على سياساتنا لضمان تجربة شراء آمنة ومريحة</p>
+            </div>
+            <div class="policies-grid">
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h4>سياسة البيع</h4>
+                    <p>الأسعار شاملة الضريبة والدفع عند الاستلام متاح في كل المحافظات.</p>
+                    <a href="sales-policy.html" class="policy-link">
+                        اقرأ المزيد
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-right-left"></i>
+                    </div>
+                    <h4>سياسة الإرجاع</h4>
+                    <p>إرجاع واستبدال خلال 14 يوم من تاريخ الاستلام بكل سهولة.</p>
+                    <a href="return-policy.html" class="policy-link">
+                        اقرأ المزيد
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>سياسة الخصوصية</h4>
+                    <p>بياناتك محمية بالكامل ولن يتم مشاركتها مع أي طرف ثالث.</p>
+                    <a href="privacy.html" class="policy-link">
+                        اقرأ المزيد
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>سياسة الضمان</h4>
+                    <p>ضمان سنة كاملة ضد عيوب التصنيع مع دعم فني سريع.</p>
+                    <a href="warranty.html" class="policy-link">
+                        اقرأ المزيد
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-badge">أسئلة شائعة</span>
+                <h2>الأسئلة الأكثر شيوعاً</h2>
+                <p>إجابات لأهم الأسئلة اللي ممكن تيجي في بالك</p>
+            </div>
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>هل لوح التقطيع الاستانلس بيخدش السكاكين؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            السطح مصمم بنعومة مدروسة عشان يحافظ على حدة السكاكين. اللوح مش هيخدش السكاكين بالشكل اللي بيحصل مع الألواح الزجاجية أو السيراميك. ده أفضل بكتير للسكاكين من الألواح التقليدية.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>هل ممكن أستخدمه للحوم والخضروات على نفس الوجه؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            اللوح بوجهين عشان تقدر تخصص وجه للحوم ووجه للخضروات والفاكهة. ده بيضمن أعلى مستوى من النظافة والأمان الصحي لعائلتك.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>إيه المقاس بالظبط وهل مناسب لمطبخي؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            المقاس 30×40 سم وده مقاس مثالي لمعظم المطابخ. مش كبير أوي يأخد مساحة ومش صغير أوي يضايقك في التقطيع. وكمان ممكن تعلقه أو تخزنه بسهولة عشان تصميمه نحيف.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>هل بيتزحلق أثناء الاستخدام؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            لا، اللوح مزود بحافة تثبيت L-Shape بتمسك في الرخامة وكمان معاه حصيرة سيليكون إضافية بتمنع الانزلاق تماماً. ده بيديك ثبات ممتاز وأمان أثناء التقطيع.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>إيه الفرق بينه وبين الألواح الخشبية والبلاستيك؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            الألواح الخشبية والبلاستيكية بتمتص السوائل والروائح وبتتحول لبيئة خصبة للبكتيريا مع الوقت. الاستانلس ستيل سطحه غير مسامي فمش بيمتص أي حاجة وسهل التنظيف والتعقيم. وكمان عمره الافتراضي أطول بكتير.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>هل ممكن أغسله في غسالة الأطباق؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            أيوه، اللوح آمن للغسل في غسالة الأطباق. بس الأفضل والأسهل إنك تغسله يدوياً بالماء والصابون وهيتنظف في ثواني لأن سطحه غير مسامي ومش بيحتفظ بأي بقايا.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>إيه سياسة الإرجاع والضمان؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            عندك 14 يوم من تاريخ الاستلام لإرجاع المنتج لو مش عاجبك. وكمان ضمان سنة كاملة ضد عيوب التصنيع. لو فيه أي مشكلة تواصل معانا على الواتساب وهنحلها فوراً.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>هل متاح الدفع عند الاستلام؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            أيوه طبعاً! الدفع عند الاستلام متاح في كل محافظات مصر. كمان ممكن تدفع عن طريق المحفظة أو إنستا باي لو تحب.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>جاهز تطلب لوح التقطيع؟</h2>
+            <p>اطلب الآن واستمتع بتجربة مطبخ أنظف وأسهل. شحن سريع لكل المحافظات!</p>
+            <div class="cta-buttons">
+                <a href="checkout.html" class="btn btn-accent btn-lg">
+                    <i class="fas fa-shopping-bag"></i>
+                    اطلب الآن – 620 ج.م
+                </a>
+                <a href="https://wa.me/201050986433?text=مرحبا، أرغب في طلب لوح التقطيع الاستانلس" 
+                   target="_blank" class="btn btn-outline btn-lg">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <span class="logo-text">OUIIL <span>HOME</span></span>
+                    <p>متجر متخصص في منتجات المطبخ العملية والعصرية. نهتم بالجودة وسهولة الاستخدام ونوفر منتجات موثوقة وخدمة عملاء سريعة.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/201050986433" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:ouiilco@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">اتصل بنا</a>
+                    <a href="checkout.html">اطلب الآن</a>
+                </div>
+
+                <!-- Policies -->
+                <div class="footer-col">
+                    <h4>السياسات</h4>
+                    <a href="sales-policy.html">سياسة البيع</a>
+                    <a href="return-policy.html">سياسة الإرجاع</a>
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="warranty.html">سياسة الضمان</a>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span dir="ltr">01050986433</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ouiilco@gmail.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>مصر</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p>© 2025 <a href="index.html">OUIIL HOME</a> – جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <a href="https://wa.me/201050986433?text=مرحبا، أرغب في الاستفسار عن لوح التقطيع" 
+       target="_blank" class="floating-whatsapp" aria-label="تواصل واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- ========== SUCCESS OVERLAY ========== -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>تم استلام طلبك بنجاح! 🎉</h2>
+            <p>سيتم التواصل معك خلال 24 ساعة لتأكيد الطلب. شكراً لثقتك في OUIIL HOME!</p>
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                العودة للرئيسية
+            </a>
+        </div>
+    </div>
+
+    <!-- ========== LOADING OVERLAY ========== -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>جاري تحميل البيانات...</p>
+    </div>
+
+    <!-- ========== TOAST ========== -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

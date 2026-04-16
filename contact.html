@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OUIIL HOME - اتصل بنا | تواصل معنا عبر الواتساب أو البريد الإلكتروني">
+    <title>اتصل بنا | OUIIL HOME</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="OUIIL HOME" onerror="this.style.display='none'">
+                <span class="logo-text">OUIIL <span>HOME</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html" class="active">اتصل بنا</a>
+            </nav>
+            <div class="header-actions">
+                <a href="checkout.html" class="btn btn-primary header-cta">
+                    <i class="fas fa-shopping-cart"></i> اطلب الآن
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html" class="active">اتصل بنا</a>
+        <a href="checkout.html">اطلب الآن</a>
+        <a href="sales-policy.html">سياسة البيع</a>
+        <a href="return-policy.html">سياسة الإرجاع</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="warranty.html">سياسة الضمان</a>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <h1>اتصل بنا</h1>
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span>/</span>
+                <span>اتصل بنا</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section style="padding:60px 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div>
+                    <h2 style="margin-bottom:8px;">نحب نسمع منك!</h2>
+                    <p style="color:var(--text-muted);margin-bottom:30px;line-height:1.8;">
+                        لو عندك أي استفسار أو محتاج مساعدة، تواصل معنا بأي طريقة تناسبك وهنرد عليك في أسرع وقت.
+                    </p>
+
+                    <!-- WhatsApp Card -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon" style="background:#D1FAE5;color:#059669;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom:4px;">واتساب</h4>
+                            <p style="margin:0;color:var(--text-muted);">أسرع طريقة للتواصل</p>
+                            <a href="https://wa.me/201050986433" target="_blank" 
+                               style="color:var(--primary);font-weight:600;" dir="ltr">01050986433</a>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon" style="background:#DBEAFE;color:#2563EB;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom:4px;">البريد الإلكتروني</h4>
+                            <p style="margin:0;color:var(--text-muted);">للاستفسارات التفصيلية</p>
+                            <a href="mailto:ouiilco@gmail.com" 
+                               style="color:var(--primary);font-weight:600;">ouiilco@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours Card -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon" style="background:#FEF3C7;color:#D97706;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom:4px;">أوقات العمل</h4>
+                            <p style="margin:0;color:var(--text-muted);">متاحين 7 أيام في الأسبوع</p>
+                            <span style="color:var(--primary);font-weight:600;">من 9 صباحاً حتى 10 مساءً</span>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon" style="background:var(--primary-pale);color:var(--primary);">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom:4px;">الموقع</h4>
+                            <p style="margin:0;color:var(--text-muted);">نوصل لكل محافظات مصر</p>
+                            <span style="color:var(--primary);font-weight:600;">جمهورية مصر العربية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <div class="checkout-form-card">
+                        <h3>
+                            <i class="fas fa-paper-plane"></i>
+                            أرسل رسالتك
+                        </h3>
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    الاسم <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="contactName" 
+                                       placeholder="أدخل اسمك" required>
+                                <div class="form-error" id="contactNameError">يرجى إدخال الاسم</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    رقم الهاتف <span class="required">*</span>
+                                </label>
+                                <input type="tel" class="form-control" id="contactPhone" 
+                                       placeholder="01xxxxxxxxx" required dir="ltr" style="text-align:right;">
+                                <div class="form-error" id="contactPhoneError">يرجى إدخال رقم هاتف صحيح</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    البريد الإلكتروني
+                                </label>
+                                <input type="email" class="form-control" id="contactEmail" 
+                                       placeholder="example@email.com (اختياري)" dir="ltr" style="text-align:right;">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    الرسالة <span class="required">*</span>
+                                </label>
+                                <textarea class="form-control" id="contactMessage" rows="5" 
+                                          placeholder="اكتب رسالتك هنا..." required></textarea>
+                                <div class="form-error" id="contactMsgError">يرجى كتابة رسالتك</div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block btn-lg" id="contactSubmitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">OUIIL <span>HOME</span></span>
+                    <p>متجر متخصص في منتجات المطبخ العملية والعصرية.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/201050986433" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:ouiilco@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">اتصل بنا</a>
+                    <a href="checkout.html">اطلب الآن</a>
+                </div>
+                <div class="footer-col">
+                    <h4>السياسات</h4>
+                    <a href="sales-policy.html">سياسة البيع</a>
+                    <a href="return-policy.html">سياسة الإرجاع</a>
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="warranty.html">سياسة الضمان</a>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i><span dir="ltr">01050986433</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i><span>ouiilco@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <a href="index.html">OUIIL HOME</a> – جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/201050986433" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></div>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>جاري إرسال رسالتك...</p>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact Form Handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+
+            var name = document.getElementById('contactName').value.trim();
+            var phone = document.getElementById('contactPhone').value.trim();
+            var email = document.getElementById('contactEmail').value.trim();
+            var message = document.getElementById('contactMessage').value.trim();
+            var valid = true;
+
+            // Clear errors
+            document.querySelectorAll('.form-error').forEach(function(el) { el.classList.remove('show'); });
+            document.querySelectorAll('.form-control').forEach(function(el) { el.classList.remove('error'); });
+
+            // Validate
+            if (!name || name.length < 3) {
+                document.getElementById('contactName').classList.add('error');
+                document.getElementById('contactNameError').classList.add('show');
+                valid = false;
+            }
+            if (!phone || !validatePhone(phone)) {
+                document.getElementById('contactPhone').classList.add('error');
+                document.getElementById('contactPhoneError').classList.add('show');
+                valid = false;
+            }
+            if (!message || message.length < 5) {
+                document.getElementById('contactMessage').classList.add('error');
+                document.getElementById('contactMsgError').classList.add('show');
+                valid = false;
+            }
+
+            if (!valid) {
+                showToast('يرجى مراجعة البيانات المطلوبة', 'error');
+                return;
+            }
+
+            var btn = document.getElementById('contactSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<div class="loading-spinner" style="width:20px;height:20px;border-width:2px;"></div> جاري الإرسال...';
+
+            submitContact({
+                name: name,
+                phone: phone,
+                email: email || '-',
+                message: message,
+                date: new Date().toLocaleString('ar-EG')
+            }).then(function(response) {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الرسالة';
+
+                if (response && response.success) {
+                    showToast('تم إرسال رسالتك بنجاح! سنرد عليك في أقرب وقت 🎉', 'success');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    showToast('حدث خطأ. يرجى المحاولة مرة أخرى', 'error');
+                }
+            }).catch(function() {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الرسالة';
+                showToast('حدث خطأ في الاتصال. حاول مرة أخرى', 'error');
+            });
+        }
+    </script>
+</body>
+</html>

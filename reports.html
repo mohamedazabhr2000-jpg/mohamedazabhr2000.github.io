@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التقارير | OUIIL HOME</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="OUIIL HOME" onerror="this.style.display='none'">
+                <span class="logo-text">OUIIL <span>HOME</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="reports.html" class="active">التقارير</a>
+                <a href="invoice.html">الفواتير</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary header-cta" onclick="loadAllOrders()">
+                    <i class="fas fa-sync-alt"></i> تحديث
+                </button>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">الرئيسية</a>
+        <a href="reports.html" class="active">التقارير</a>
+        <a href="invoice.html">الفواتير</a>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- REPORTS SECTION -->
+    <section class="reports-section">
+        <div class="container">
+            <h2 style="margin-bottom:8px;padding-top:10px;">
+                <i class="fas fa-chart-line" style="color:var(--primary);"></i> لوحة التقارير
+            </h2>
+            <p style="color:var(--text-muted);margin-bottom:30px;">متابعة الطلبات والإحصائيات</p>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-box"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statTotal">0</h4>
+                        <p>إجمالي الطلبات</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-calendar-day"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statToday">0</h4>
+                        <p>طلبات اليوم</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="fas fa-calendar-week"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statWeek">0</h4>
+                        <p>طلبات الأسبوع</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-coins"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statRevenue">0 ج.م</h4>
+                        <p>إجمالي المبيعات</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Stats -->
+            <div class="stats-grid" style="margin-bottom:30px;">
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-calendar-check"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statMonth">0</h4>
+                        <p>طلبات الشهر</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-calculator"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statAvg">0 ج.م</h4>
+                        <p>متوسط قيمة الطلب</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="fas fa-percent"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statDiscount">0</h4>
+                        <p>طلبات بخصم</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h4 id="statDuplicates">0</h4>
+                        <p>عملاء مكررون</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-bar">
+                <input type="text" class="form-control" id="filterSearch" placeholder="بحث بالاسم أو رقم الهاتف...">
+                <select class="form-control" id="filterGov">
+                    <option value="">كل المحافظات</option>
+                </select>
+                <select class="form-control" id="filterPayment">
+                    <option value="">كل طرق الدفع</option>
+                    <option value="الدفع عند الاستلام">الدفع عند الاستلام</option>
+                    <option value="محفظة إلكترونية">محفظة إلكترونية</option>
+                    <option value="إنستا باي">إنستا باي</option>
+                </select>
+                <select class="form-control" id="filterStatus">
+                    <option value="">كل الحالات</option>
+                    <option value="جديد">جديد</option>
+                    <option value="مؤكد">مؤكد</option>
+                    <option value="تم الشحن">تم الشحن</option>
+                    <option value="تم التوصيل">تم التوصيل</option>
+                    <option value="ملغي">ملغي</option>
+                </select>
+                <select class="form-control" id="filterDate">
+                    <option value="">كل الفترات</option>
+                    <option value="today">اليوم</option>
+                    <option value="week">هذا الأسبوع</option>
+                    <option value="month">هذا الشهر</option>
+                </select>
+                <select class="form-control" id="filterDuplicate">
+                    <option value="">الكل</option>
+                    <option value="duplicate">مكررون فقط</option>
+                </select>
+                <button class="btn btn-primary" onclick="applyFilters()">
+                    <i class="fas fa-filter"></i> فلترة
+                </button>
+                <button class="btn btn-outline" onclick="resetFilters()">
+                    <i class="fas fa-times"></i> مسح
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h4 style="margin:0;">
+                        <i class="fas fa-list"></i> الطلبات
+                        <span id="ordersCount" style="color:var(--text-muted);font-weight:400;font-size:0.9rem;"></span>
+                    </h4>
+                    <div style="display:flex;gap:10px;">
+                        <button class="btn btn-sm btn-outline" onclick="exportCSV()">
+                            <i class="fas fa-file-csv"></i> تصدير CSV
+                        </button>
+                        <button class="btn btn-sm btn-outline" onclick="window.print()">
+                            <i class="fas fa-print"></i> طباعة
+                        </button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table" id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم الطلب</th>
+                                <th>التاريخ</th>
+                                <th>العميل</th>
+                                <th>الهاتف</th>
+                                <th>المحافظة</th>
+                                <th>المدينة</th>
+                                <th>الكمية</th>
+                                <th>الإجمالي</th>
+                                <th>طريقة الدفع</th>
+                                <th>الكوبون</th>
+                                <th>الحالة</th>
+                                <th>ملاحظات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <tr>
+                                <td colspan="13" style="text-align:center;padding:40px;color:var(--text-muted);">
+                                    <div class="loading-spinner" style="margin:0 auto 12px;"></div>
+                                    <p>جاري تحميل البيانات...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination" id="pagination"></div>
+            </div>
+
+            <!-- Top Governorates -->
+            <div style="margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+                <div class="table-wrapper" style="padding:24px;">
+                    <h4 style="margin-bottom:16px;"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> أكثر المحافظات طلباً</h4>
+                    <div id="topGovernorates">
+                        <p style="color:var(--text-muted);text-align:center;">جاري التحميل...</p>
+                    </div>
+                </div>
+                <div class="table-wrapper" style="padding:24px;">
+                    <h4 style="margin-bottom:16px;"><i class="fas fa-credit-card" style="color:var(--primary);"></i> طرق الدفع الأكثر استخداماً</h4>
+                    <div id="topPayments">
+                        <p style="color:var(--text-muted);text-align:center;">جاري التحميل...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duplicate Customers -->
+            <div class="table-wrapper" style="margin-top:24px;">
+                <div class="table-header">
+                    <h4 style="margin:0;"><i class="fas fa-users" style="color:var(--accent);"></i> العملاء المكررون</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>رقم الهاتف</th>
+                                <th>عدد الطلبات</th>
+                                <th>آخر طلب</th>
+                                <th>إجمالي المشتريات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="duplicatesTableBody">
+                            <tr><td colspan="5" style="text-align:center;padding:30px;color:var(--text-muted);">جاري التحميل...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>جاري تحميل البيانات...</p>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>

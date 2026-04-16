@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفاتورة | OUIIL HOME</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header no-print" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="OUIIL HOME" onerror="this.style.display='none'">
+                <span class="logo-text">OUIIL <span>HOME</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="reports.html">التقارير</a>
+                <a href="invoice.html" class="active">الفواتير</a>
+            </nav>
+            <div class="header-actions">
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">الرئيسية</a>
+        <a href="reports.html">التقارير</a>
+        <a href="invoice.html" class="active">الفواتير</a>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- INVOICE SECTION -->
+    <section class="invoice-section">
+        <div class="container">
+
+            <!-- Search -->
+            <div class="invoice-search no-print">
+                <div class="form-group" style="flex:1;margin:0;">
+                    <label class="form-label">بحث برقم الطلب أو رقم الهاتف</label>
+                    <input type="text" class="form-control" id="invoiceSearch" 
+                           placeholder="أدخل رقم الطلب أو رقم الهاتف...">
+                </div>
+                <button class="btn btn-primary" onclick="searchInvoice()" style="align-self:flex-end;">
+                    <i class="fas fa-search"></i> بحث
+                </button>
+            </div>
+
+            <!-- Invoice Paper -->
+            <div id="invoiceContainer" style="display:none;">
+                <div class="invoice-paper" id="invoicePaper">
+
+                    <!-- Invoice Header -->
+                    <div class="invoice-header-section">
+                        <div class="invoice-brand">
+                            <h2>OUIIL HOME</h2>
+                            <p>اويل هوم – منتجات مطبخ عملية وعصرية</p>
+                            <p style="font-size:0.8rem;">
+                                <i class="fab fa-whatsapp"></i> 01050986433 |
+                                <i class="fas fa-envelope"></i> ouiilco@gmail.com
+                            </p>
+                        </div>
+                        <div class="invoice-meta">
+                            <h3 style="color:var(--primary);margin-bottom:8px;">فاتورة</h3>
+                            <p><strong>رقم الطلب:</strong> <span id="invOrderId">-</span></p>
+                            <p><strong>التاريخ:</strong> <span id="invDate">-</span></p>
+                            <p><strong>الحالة:</strong> <span id="invStatus" class="status-badge pending">-</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Customer & Shipping Details -->
+                    <div class="invoice-details-grid">
+                        <div class="invoice-detail-box">
+                            <h4><i class="fas fa-user"></i> بيانات العميل</h4>
+                            <p><strong>الاسم:</strong> <span id="invName">-</span></p>
+                            <p><strong>الهاتف:</strong> <span id="invPhone" dir="ltr">-</span></p>
+                            <p><strong>هاتف احتياطي:</strong> <span id="invPhone2" dir="ltr">-</span></p>
+                        </div>
+                        <div class="invoice-detail-box">
+                            <h4><i class="fas fa-map-marker-alt"></i> عنوان التوصيل</h4>
+                            <p><strong>المحافظة:</strong> <span id="invGov">-</span></p>
+                            <p><strong>المدينة:</strong> <span id="invCity">-</span></p>
+                            <p><strong>العنوان:</strong> <span id="invAddress">-</span></p>
+                            <p><strong>علامة مميزة:</strong> <span id="invLandmark">-</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Products Table -->
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>الكمية</th>
+                                <th>سعر الوحدة</th>
+                                <th>الإجمالي</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invProductsBody">
+                            <tr>
+                                <td id="invProductName">-</td>
+                                <td id="invQuantity">-</td>
+                                <td id="invUnitPrice">-</td>
+                                <td id="invSubtotal">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Totals -->
+                    <div class="invoice-totals">
+                        <div class="invoice-totals-box">
+                            <div class="invoice-totals-row">
+                                <span>الإجمالي الفرعي</span>
+                                <span id="invTotalProducts">0 ج.م</span>
+                            </div>
+                            <div class="invoice-totals-row">
+                                <span>الشحن</span>
+                                <span id="invShipping">0 ج.م</span>
+                            </div>
+                            <div class="invoice-totals-row" id="invDiscountRow" style="display:none;">
+                                <span>الخصم <small id="invCouponCode"></small></span>
+                                <span id="invDiscount" style="color:var(--primary);">- 0 ج.م</span>
+                            </div>
+                            <div class="invoice-totals-row total">
+                                <span>الإجمالي النهائي</span>
+                                <span id="invTotal">0 ج.م</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Info -->
+                    <div style="padding:16px 20px;background:var(--bg-light);border-radius:var(--radius-sm);margin-bottom:24px;">
+                        <p style="margin:0;font-size:0.92rem;">
+                            <strong><i class="fas fa-credit-card" style="color:var(--primary);"></i> طريقة الدفع:</strong>
+                            <span id="invPayment">-</span>
+                        </p>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="invoice-footer-section">
+                        <p>شكراً لتسوقك من <strong style="color:var(--primary);">OUIIL HOME</strong></p>
+                        <p>واتساب: 01050986433 | البريد: ouiilco@gmail.com</p>
+                        <p style="margin-top:8px;font-size:0.8rem;">هذه الفاتورة صادرة إلكترونياً ولا تحتاج إلى توقيع</p>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="invoice-actions no-print" style="margin-top:24px;">
+                    <button class="btn btn-primary btn-lg" onclick="printInvoice()">
+                        <i class="fas fa-print"></i> طباعة الفاتورة
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> تحميل PDF
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="shareWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> مشاركة واتساب
+                    </button>
+                </div>
+            </div>
+
+            <!-- Not Found -->
+            <div id="invoiceNotFound" style="display:none;text-align:center;padding:60px 20px;">
+                <i class="fas fa-search" style="font-size:3rem;color:var(--text-muted);margin-bottom:16px;"></i>
+                <h3 style="color:var(--text-muted);">لم يتم العثور على الطلب</h3>
+                <p style="color:var(--text-muted);">تأكد من رقم الطلب أو رقم الهاتف وحاول مرة أخرى</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>جاري البحث...</p>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Check URL params
+        document.addEventListener('DOMContentLoaded', function () {
+            var params = new URLSearchParams(window.location.search);
+            var id = params.get('id');
+            if (id) {
+                document.getElementById('invoiceSearch').value = id;
+                searchInvoice();
+            }
+        });
+
+        // Search Invoice
+        function searchInvoice() {
+            var query = document.getElementById('invoiceSearch').value.trim();
+            if (!query) {
+                showToast('يرجى إدخال رقم الطلب أو رقم الهاتف', 'error');
+                return;
+            }
+
+            showLoading();
+            document.getElementById('invoiceContainer').style.display = 'none';
+            document.getElementById('invoiceNotFound').style.display = 'none';
+
+            apiCall('searchOrder', { query: query })
+                .then(function (data) {
+                    hideLoading();
+                    if (data && data.success && data.order) {
+                        populateInvoice(data.order);
+                        document.getElementById('invoiceContainer').style.display = 'block';
+                        showToast('تم العثور على الطلب', 'success');
+                    } else {
+                        document.getElementById('invoiceNotFound').style.display = 'block';
+                        showToast('لم يتم العثور على الطلب', 'error');
+                    }
+                })
+                .catch(function () {
+                    hideLoading();
+                    document.getElementById('invoiceNotFound').style.display = 'block';
+                    showToast('خطأ في البحث', 'error');
+                });
+        }
+
+        // Populate Invoice
+        function populateInvoice(order) {
+            document.getElementById('invOrderId').textContent = order.order_id || '-';
+            document.getElementById('invDate').textContent = order.date || '-';
+
+            var statusEl = document.getElementById('invStatus');
+            statusEl.textContent = order.order_status || 'جديد';
+            statusEl.className = 'status-badge ' + getInvStatusClass(order.order_status);
+
+            document.getElementById('invName').textContent = order.customer_name || '-';
+            document.getElementById('invPhone').textContent = order.phone_primary || '-';
+            document.getElementById('invPhone2').textContent = order.phone_secondary || '-';
+            document.getElementById('invGov').textContent = order.governorate || '-';
+            document.getElementById('invCity').textContent = order.city || '-';
+            document.getElementById('invAddress').textContent = order.full_address || '-';
+            document.getElementById('invLandmark').textContent = order.landmark || '-';
+
+            var qty = parseInt(order.quantity) || 1;
+            var price = parseFloat(order.product_price) || 0;
+            var shipping = parseFloat(order.shipping_price) || 0;
+            var discount = parseFloat(order.discount_value) || 0;
+            var total = parseFloat(order.total) || 0;
+            var subtotal = price * qty;
+
+            document.getElementById('invProductName').textContent = order.product_name || '-';
+            document.getElementById('invQuantity').textContent = qty;
+            document.getElementById('invUnitPrice').textContent = price + ' ج.م';
+            document.getElementById('invSubtotal').textContent = subtotal + ' ج.م';
+            document.getElementById('invTotalProducts').textContent = subtotal + ' ج.م';
+            document.getElementById('invShipping').textContent = shipping + ' ج.م';
+
+            if (discount > 0) {
+                document.getElementById('invDiscountRow').style.display = 'flex';
+                document.getElementById('invDiscount').textContent = '- ' + discount + ' ج.م';
+                document.getElementById('invCouponCode').textContent = order.coupon_code ? '(' + order.coupon_code + ')' : '';
+            } else {
+                document.getElementById('invDiscountRow').style.display = 'none';
+            }
+
+            document.getElementById('invTotal').textContent = total + ' ج.م';
+            document.getElementById('invPayment').textContent = order.payment_method || '-';
+        }
+
+        function getInvStatusClass(status) {
+            switch (status) {
+                case 'جديد': return 'pending';
+                case 'مؤكد': return 'confirmed';
+                case 'تم الشحن': return 'shipped';
+                case 'تم التوصيل': return 'delivered';
+                case 'ملغي': return 'cancelled';
+                default: return 'pending';
+            }
+        }
+
+        // Print
+        function printInvoice() {
+            window.print();
+        }
+
+        // PDF (using print to PDF)
+        function downloadPDF() {
+            showToast('استخدم طباعة > حفظ كـ PDF من المتصفح', 'warning');
+            setTimeout(function () { window.print(); }, 500);
+        }
+
+        // Share WhatsApp
+        function shareWhatsApp() {
+            var orderId = document.getElementById('invOrderId').textContent;
+            var total = document.getElementById('invTotal').textContent;
+            var name = document.getElementById('invName').textContent;
+            var msg = 'فاتورة OUIIL HOME\n' +
+                'رقم الطلب: ' + orderId + '\n' +
+                'العميل: ' + name + '\n' +
+                'الإجمالي: ' + total + '\n' +
+                'شكراً لتسوقك معنا! 🎉';
+            window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+        }
+    </script>
+</body>
+</html>

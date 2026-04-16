@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OUIIL HOME - إتمام الطلب">
+    <title>إتمام الطلب | OUIIL HOME</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="OUIIL HOME" onerror="this.style.display='none'">
+                <span class="logo-text">OUIIL <span>HOME</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+            <div class="header-actions">
+                <a href="checkout.html" class="btn btn-primary header-cta active">
+                    <i class="fas fa-shopping-cart"></i>
+                    إتمام الطلب
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">اتصل بنا</a>
+        <a href="sales-policy.html">سياسة البيع</a>
+        <a href="return-policy.html">سياسة الإرجاع</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="warranty.html">سياسة الضمان</a>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ========== CHECKOUT SECTION ========== -->
+    <section class="checkout-section">
+        <div class="container">
+            <!-- Checkout Header -->
+            <div class="section-title" style="margin-bottom:30px;">
+                <h2><i class="fas fa-shopping-bag" style="color:var(--primary);"></i> إتمام الطلب</h2>
+                <p>أكمل بياناتك وهنتواصل معاك خلال 24 ساعة لتأكيد الطلب</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="checkout-steps" id="checkoutSteps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>البيانات الشخصية</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>العنوان</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>الدفع</span>
+                </div>
+            </div>
+
+            <div class="checkout-grid">
+                <!-- ===== LEFT: FORM ===== -->
+                <div class="checkout-form-wrapper">
+                    <form id="checkoutForm" novalidate>
+
+                        <!-- Step 1: Personal Info -->
+                        <div class="checkout-form-card checkout-step-content active" id="step1">
+                            <h3>
+                                <i class="fas fa-user"></i>
+                                البيانات الشخصية
+                            </h3>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    الاسم الكامل <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="customerName" 
+                                       placeholder="أدخل اسمك الكامل" required>
+                                <div class="form-error" id="nameError">يرجى إدخال الاسم الكامل</div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        رقم الموبايل الأساسي <span class="required">*</span>
+                                    </label>
+                                    <input type="tel" class="form-control" id="phonePrimary" 
+                                           placeholder="01xxxxxxxxx" required dir="ltr" style="text-align:right;">
+                                    <div class="form-error" id="phoneError">يرجى إدخال رقم موبايل صحيح</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        رقم موبايل احتياطي
+                                    </label>
+                                    <input type="tel" class="form-control" id="phoneSecondary" 
+                                           placeholder="01xxxxxxxxx (اختياري)" dir="ltr" style="text-align:right;">
+                                    <div class="form-error" id="phone2Error">رقم الموبايل غير صحيح</div>
+                                </div>
+                            </div>
+
+                            <div class="step-actions">
+                                <button type="button" class="btn btn-primary btn-block" onclick="goToStep(2)">
+                                    التالي – بيانات العنوان
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Address -->
+                        <div class="checkout-form-card checkout-step-content" id="step2">
+                            <h3>
+                                <i class="fas fa-map-marker-alt"></i>
+                                عنوان التوصيل
+                            </h3>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        المحافظة <span class="required">*</span>
+                                    </label>
+                                    <select class="form-control" id="governorate" required>
+                                        <option value="">اختر المحافظة</option>
+                                    </select>
+                                    <div class="form-error" id="govError">يرجى اختيار المحافظة</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        المدينة <span class="required">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="city" 
+                                           placeholder="أدخل اسم المدينة" required>
+                                    <div class="form-error" id="cityError">يرجى إدخال المدينة</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    العنوان بالتفصيل <span class="required">*</span>
+                                </label>
+                                <textarea class="form-control" id="fullAddress" rows="3" 
+                                          placeholder="الشارع – رقم المبنى – الدور – الشقة" required></textarea>
+                                <div class="form-error" id="addressError">يرجى إدخال العنوان بالتفصيل</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    علامة مميزة بجانب العنوان
+                                </label>
+                                <input type="text" class="form-control" id="landmark" 
+                                       placeholder="مثال: بجانب مسجد / أمام صيدلية (اختياري)">
+                            </div>
+
+                            <div class="step-actions two-btns">
+                                <button type="button" class="btn btn-outline" onclick="goToStep(1)">
+                                    <i class="fas fa-arrow-right"></i>
+                                    السابق
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="goToStep(3)">
+                                    التالي – طريقة الدفع
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Payment -->
+                        <div class="checkout-form-card checkout-step-content" id="step3">
+                            <h3>
+                                <i class="fas fa-credit-card"></i>
+                                طريقة الدفع
+                            </h3>
+
+                            <div class="payment-methods">
+                                <!-- COD -->
+                                <label class="payment-option selected" id="paymentCOD">
+                                    <input type="radio" name="paymentMethod" value="cod" checked 
+                                           onchange="selectPayment('cod')">
+                                    <div>
+                                        <div class="payment-option-label">
+                                            <i class="fas fa-money-bill-wave" style="color:#059669;margin-left:8px;"></i>
+                                            الدفع عند الاستلام
+                                        </div>
+                                        <div class="payment-option-desc">ادفع للمندوب لما المنتج يوصلك</div>
+                                    </div>
+                                </label>
+
+                                <!-- Wallet -->
+                                <label class="payment-option" id="paymentWallet">
+                                    <input type="radio" name="paymentMethod" value="wallet" 
+                                           onchange="selectPayment('wallet')">
+                                    <div>
+                                        <div class="payment-option-label">
+                                            <i class="fas fa-wallet" style="color:#1A73E8;margin-left:8px;"></i>
+                                            محفظة إلكترونية
+                                        </div>
+                                        <div class="payment-option-desc">فودافون كاش / أورانج / اتصالات</div>
+                                    </div>
+                                </label>
+
+                                <!-- InstaPay -->
+                                <label class="payment-option" id="paymentInstapay">
+                                    <input type="radio" name="paymentMethod" value="instapay" 
+                                           onchange="selectPayment('instapay')">
+                                    <div>
+                                        <div class="payment-option-label">
+                                            <i class="fas fa-building-columns" style="color:#5B2C8E;margin-left:8px;"></i>
+                                            إنستا باي
+                                        </div>
+                                        <div class="payment-option-desc">تحويل فوري عبر إنستا باي</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- Transfer Details (Hidden by default) -->
+                            <div class="payment-details" id="transferDetails">
+                                <div class="transfer-info-box">
+                                    <p style="font-weight:600;color:var(--text-primary);margin-bottom:12px;">
+                                        <i class="fas fa-info-circle" style="color:var(--primary);"></i>
+                                        يرجى التحويل على الرقم التالي:
+                                    </p>
+                                    <div class="transfer-number" id="transferNumber">
+                                        01285910373
+                                    </div>
+                                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:16px;">
+                                        بعد التحويل، ارفع صورة إيصال التحويل هنا
+                                    </p>
+
+                                    <!-- File Upload -->
+                                    <div class="file-upload" id="fileUploadArea">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>اضغط هنا أو اسحب صورة التحويل</p>
+                                        <p style="font-size:0.8rem;color:var(--text-muted);">
+                                            JPG, PNG, PDF – حد أقصى 5MB
+                                        </p>
+                                        <input type="file" id="paymentProof" accept="image/*,.pdf" 
+                                               onchange="handleFileUpload(this)">
+                                    </div>
+                                    <div class="file-preview" id="filePreview">
+                                        <img id="previewImage" src="" alt="صورة التحويل">
+                                        <p class="file-name" id="fileName"></p>
+                                        <button type="button" class="btn btn-sm btn-outline" 
+                                                onclick="removeFile()" style="margin-top:8px;">
+                                            <i class="fas fa-trash"></i>
+                                            إزالة الصورة
+                                        </button>
+                                    </div>
+                                    <div class="form-error" id="proofError">
+                                        يرجى رفع صورة إيصال التحويل
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-actions two-btns" style="margin-top:24px;">
+                                <button type="button" class="btn btn-outline" onclick="goToStep(2)">
+                                    <i class="fas fa-arrow-right"></i>
+                                    السابق
+                                </button>
+                                <button type="submit" class="btn btn-accent btn-lg" id="submitOrderBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    تأكيد الطلب
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ===== RIGHT: ORDER SUMMARY ===== -->
+                <div class="order-summary-wrapper">
+                    <div class="order-summary" id="orderSummary">
+                        <h3>
+                            <i class="fas fa-receipt" style="color:var(--primary);"></i>
+                            ملخص الطلب
+                        </h3>
+
+                        <!-- Product -->
+                        <div class="summary-product">
+                            <div class="summary-product-img">
+                                <img src="images/product-1.png" alt="لوح تقطيع">
+                            </div>
+                            <div class="summary-product-info">
+                                <h4>لوح تقطيع ستانلس ستيل</h4>
+                                <p>30×40 سم – وجهين للاستخدام</p>
+                                <p style="color:var(--primary);font-weight:700;" id="summaryUnitPrice">
+                                    620 ج.م
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div style="padding:16px 0;border-bottom:1px solid var(--border-light);">
+                            <label class="form-label" style="margin-bottom:10px;">الكمية</label>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" onclick="updateQuantity(-1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" class="qty-input" id="quantity" value="1" 
+                                       min="1" max="10" readonly>
+                                <button type="button" class="qty-btn" onclick="updateQuantity(1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Coupon -->
+                        <div class="coupon-section">
+                            <label class="form-label" style="margin-bottom:8px;">كود الخصم</label>
+                            <div class="coupon-input-group">
+                                <input type="text" id="couponCode" placeholder="أدخل كود الخصم">
+                                <button type="button" onclick="applyCoupon()" id="couponBtn">
+                                    تطبيق
+                                </button>
+                            </div>
+                            <div class="coupon-msg" id="couponMsg"></div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="summary-breakdown" style="padding-top:16px;">
+                            <div class="summary-line">
+                                <span>سعر المنتج</span>
+                                <span id="lineProductPrice">620 ج.م</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>الكمية</span>
+                                <span id="lineQuantity">1</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>الإجمالي الفرعي</span>
+                                <span id="lineSubtotal">620 ج.م</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>الشحن</span>
+                                <span id="lineShipping">120 ج.م</span>
+                            </div>
+                            <div class="summary-line discount" id="lineDiscountRow" style="display:none;">
+                                <span>الخصم</span>
+                                <span id="lineDiscount">- 0 ج.م</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>الإجمالي النهائي</span>
+                                <span id="lineTotal">740 ج.م</span>
+                            </div>
+                        </div>
+
+                        <!-- Trust Badges Mini -->
+                        <div class="summary-trust">
+                            <div class="summary-trust-item">
+                                <i class="fas fa-shield-halved"></i>
+                                <span>ضمان سنة كاملة</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <i class="fas fa-rotate-left"></i>
+                                <span>إرجاع خلال 14 يوم</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <i class="fas fa-truck-fast"></i>
+                                <span>شحن سريع لكل المحافظات</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <i class="fas fa-lock"></i>
+                                <span>بياناتك محمية وآمنة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">OUIIL <span>HOME</span></span>
+                    <p>متجر متخصص في منتجات المطبخ العملية والعصرية.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/201050986433" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:ouiilco@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">اتصل بنا</a>
+                </div>
+                <div class="footer-col">
+                    <h4>السياسات</h4>
+                    <a href="sales-policy.html">سياسة البيع</a>
+                    <a href="return-policy.html">سياسة الإرجاع</a>
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="warranty.html">سياسة الضمان</a>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span dir="ltr">01050986433</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ouiilco@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <a href="index.html">OUIIL HOME</a> – جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/201050986433" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Success Overlay -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>تم استلام طلبك بنجاح! 🎉</h2>
+            <p id="successOrderId"></p>
+            <p>سيتم التواصل معك خلال 24 ساعة لتأكيد الطلب. شكراً لثقتك في OUIIL HOME!</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    العودة للرئيسية
+                </a>
+                <a href="https://wa.me/201050986433" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل معنا
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>جاري إرسال طلبك...</p>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
